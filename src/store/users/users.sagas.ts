@@ -1,11 +1,11 @@
 import { call, put, takeLatest } from "redux-saga/effects";
-import { fetchUsers } from "@/api/users.api";
 import type { IUser } from "@/types/user";
 import {
   fetchUsersRequest,
   fetchUsersSuccess,
   fetchUsersFailure,
 } from "./users.slice";
+import { fetchUsers } from "@/services/api/users.api";
 
 function* fetchUsersSaga() {
   try {
