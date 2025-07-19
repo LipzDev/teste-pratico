@@ -93,6 +93,7 @@ export const UserDetail = () => {
             <S.UserName>{user.name}</S.UserName>
             <S.UserUsername>@{user.username}</S.UserUsername>
           </S.UserTitle>
+
           <S.FavoriteButton
             isFavorite={isFavorite}
             onClick={handleToggleFavorite}

@@ -15,6 +15,14 @@ export const UserDetailHeader = styled.div`
   margin-bottom: ${({ theme }) => theme.spacing.xl};
   padding-bottom: ${({ theme }) => theme.spacing.lg};
   border-bottom: 2px solid ${({ theme }) => theme.colors.border};
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    button {
+      margin-top: 20px;
+    }
+  }
 `;
 
 export const UserTitle = styled.div`

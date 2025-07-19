@@ -210,8 +210,8 @@ export const FavoriteButton = styled.button<{ variant?: "primary" | "danger" }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  text-wrap: nowrap;
-  white-space: nowrap;
+  /* text-wrap: nowrap;
+  white-space: nowrap; */
 
   ${({ theme, variant = "primary" }) =>
     variant === "danger"

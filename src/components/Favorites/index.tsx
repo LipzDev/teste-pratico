@@ -7,7 +7,6 @@ import {
   Eye,
   Trash2,
   ChevronDown,
-  ChevronUp,
 } from "lucide-react";
 import { useFavoritesPanel } from "@/hooks/useFavoritesPanel";
 import * as S from "@/components/Favorites/styles";
@@ -65,7 +64,7 @@ export const FavoritesPanel = () => {
           onClick={() => setIsCollapsed(!isCollapsed)}
           title={isCollapsed ? "Expandir favoritos" : "Recolher favoritos"}
         >
-          {isCollapsed ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
+          <ChevronDown size={16} />
         </S.CollapseButton>
       </S.FavoritesHeader>
 
@@ -114,15 +113,16 @@ export const FavoritesPanel = () => {
 
               <S.FavoriteActions>
                 <S.FavoriteButton onClick={() => handleViewDetails(user.id)}>
-                  <Eye size={16} style={{ marginRight: "4px" }} />
+                  <Eye size={16} />
                   Detalhes
                 </S.FavoriteButton>
+
                 <S.FavoriteButton
                   variant="danger"
                   onClick={() => handleRemoveFavorite(user.id)}
                   title="Remover dos favoritos"
                 >
-                  <Trash2 size={16} style={{ marginRight: "4px" }} />
+                  <Trash2 size={16} />
                   Remover
                 </S.FavoriteButton>
               </S.FavoriteActions>
