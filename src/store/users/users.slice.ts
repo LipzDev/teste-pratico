@@ -1,9 +1,9 @@
-import { createSlice, createAction } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
-import type { User } from '../../types/user';
+import { createSlice, createAction } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
+import type { IUser } from "@/types/user";
 
 interface UsersState {
-  data: User[];
+  data: IUser[];
   loading: boolean;
   error?: string;
 }
@@ -14,12 +14,16 @@ const initialState: UsersState = {
   error: undefined,
 };
 
-export const fetchUsersRequest = createAction('users/fetchUsersRequest');
-export const fetchUsersSuccess = createAction<User[]>('users/fetchUsersSuccess');
-export const fetchUsersFailure = createAction<string>('users/fetchUsersFailure');
+export const fetchUsersRequest = createAction("users/fetchUsersRequest");
+export const fetchUsersSuccess = createAction<IUser[]>(
+  "users/fetchUsersSuccess",
+);
+export const fetchUsersFailure = createAction<string>(
+  "users/fetchUsersFailure",
+);
 
 const usersSlice = createSlice({
-  name: 'users',
+  name: "users",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -28,7 +32,7 @@ const usersSlice = createSlice({
         state.loading = true;
         state.error = undefined;
       })
-      .addCase(fetchUsersSuccess, (state, action: PayloadAction<User[]>) => {
+      .addCase(fetchUsersSuccess, (state, action: PayloadAction<IUser[]>) => {
         state.loading = false;
         state.data = action.payload;
         state.error = undefined;

@@ -18,7 +18,11 @@ export const FavoritesHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: ${({ theme }) => theme.spacing.md} ${({ theme }) => theme.spacing.lg};
-  background: linear-gradient(135deg, ${({ theme }) => theme.colors.primary} 0%, ${({ theme }) => theme.colors.accent} 100%);
+  background: linear-gradient(
+    135deg,
+    ${({ theme }) => theme.colors.primary} 0%,
+    ${({ theme }) => theme.colors.accent} 100%
+  );
   border-bottom: none;
 `;
 
@@ -83,7 +87,11 @@ export const FavoriteItem = styled.div`
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, ${({ theme }) => theme.colors.primary} 0%, ${({ theme }) => theme.colors.accent} 100%);
+    background: linear-gradient(
+      90deg,
+      ${({ theme }) => theme.colors.primary} 0%,
+      ${({ theme }) => theme.colors.accent} 100%
+    );
     opacity: 0;
     transition: ${({ theme }) => theme.transitions.fast};
   }
@@ -110,7 +118,11 @@ export const FavoriteAvatar = styled.div`
   width: 40px;
   height: 40px;
   border-radius: ${({ theme }) => theme.borderRadius.full};
-  background: linear-gradient(135deg, ${({ theme }) => theme.colors.primary} 0%, ${({ theme }) => theme.colors.accent} 100%);
+  background: linear-gradient(
+    135deg,
+    ${({ theme }) => theme.colors.primary} 0%,
+    ${({ theme }) => theme.colors.accent} 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -274,7 +286,9 @@ export const CollapseButton = styled.button<{ $isCollapsed: boolean }>`
   }
 
   svg {
-    transform: rotate(${({ $isCollapsed }) => ($isCollapsed ? '180deg' : '0deg')});
+    transform: rotate(
+      ${({ $isCollapsed }) => ($isCollapsed ? '180deg' : '0deg')}
+    );
     transition: ${({ theme }) => theme.transitions.fast};
   }
 `;

@@ -1,14 +1,14 @@
-import type { User } from '../../types/user';
+import type { IUser } from "@/types/user";
 
 export interface UsersState {
-  data: User[];
+  data: IUser[];
   loading: boolean;
   error?: string;
 }
 
-export const FETCH_USERS_REQUEST = 'users/fetchUsersRequest';
-export const FETCH_USERS_SUCCESS = 'users/fetchUsersSuccess';
-export const FETCH_USERS_FAILURE = 'users/fetchUsersFailure';
+export const FETCH_USERS_REQUEST = "users/fetchUsersRequest";
+export const FETCH_USERS_SUCCESS = "users/fetchUsersSuccess";
+export const FETCH_USERS_FAILURE = "users/fetchUsersFailure";
 
 export interface FetchUsersRequestAction {
   type: typeof FETCH_USERS_REQUEST;
@@ -16,7 +16,7 @@ export interface FetchUsersRequestAction {
 
 export interface FetchUsersSuccessAction {
   type: typeof FETCH_USERS_SUCCESS;
-  payload: User[];
+  payload: IUser[];
 }
 
 export interface FetchUsersFailureAction {
@@ -24,7 +24,7 @@ export interface FetchUsersFailureAction {
   payload: string;
 }
 
-export type UsersActionTypes = 
-  | FetchUsersRequestAction 
-  | FetchUsersSuccessAction 
+export type UsersActionTypes =
+  | FetchUsersRequestAction
+  | FetchUsersSuccessAction
   | FetchUsersFailureAction;

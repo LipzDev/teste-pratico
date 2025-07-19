@@ -1,4 +1,4 @@
-import type { RootState } from '../index';
+import type { RootState } from "@/store";
 
 export const selectUsers = (state: RootState) => state.users.data;
 export const selectUsersLoading = (state: RootState) => state.users.loading;

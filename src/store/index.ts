@@ -1,7 +1,7 @@
-import { configureStore } from '@reduxjs/toolkit';
-import createSagaMiddleware from 'redux-saga';
-import { rootReducer } from './rootReducer';
-import { rootSaga } from './rootSaga';
+import { configureStore } from "@reduxjs/toolkit";
+import createSagaMiddleware from "redux-saga";
+import { rootReducer } from "./rootReducer";
+import { rootSaga } from "./rootSaga";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -12,6 +12,7 @@ export const store = configureStore({
       thunk: false,
       serializableCheck: false,
     }).concat(sagaMiddleware),
+  devTools: import.meta.env.DEV,
 });
 
 sagaMiddleware.run(rootSaga);

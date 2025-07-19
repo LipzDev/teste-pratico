@@ -6,7 +6,7 @@ import { selectUsers } from "@/store/users/users.selectors";
 import { removeFavorite } from "@/store/favorites/favorites.slice";
 import type { IUser } from "@/types/user";
 
-export const useFavorites = () => {
+export const useFavoritesPanel = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -34,18 +34,12 @@ export const useFavorites = () => {
       .join("");
   };
 
-  const toggleCollapse = () => {
-    setIsCollapsed(!isCollapsed);
-  };
-
   return {
+    isCollapsed,
+    setIsCollapsed,
+    favoriteUsers,
     handleViewDetails,
     handleRemoveFavorite,
     getInitials,
-    toggleCollapse,
-    favoriteUsers,
-    isCollapsed,
-    favoriteIds,
-    allUsers,
   };
 };

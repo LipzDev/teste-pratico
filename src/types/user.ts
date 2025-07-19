@@ -1,4 +1,4 @@
-export interface Geo {
+export interface IGeo {
   lat: string;
   lng: string;
 }
@@ -8,16 +8,16 @@ export interface Address {
   suite: string;
   city: string;
   zipcode: string;
-  geo: Geo;
+  geo: IGeo;
 }
 
-export interface Company {
+export interface ICompany {
   name: string;
   catchPhrase: string;
   bs: string;
 }
 
-export interface User {
+export interface IUser {
   id: number;
   name: string;
   username: string;
@@ -25,5 +25,5 @@ export interface User {
   address: Address;
   phone: string;
   website: string;
-  company: Company;
+  company: ICompany;
 }

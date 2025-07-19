@@ -15,6 +15,7 @@ Uma Single Page Application desenvolvida em React + TypeScript que consome a API
 ## 🧱 Stack Tecnológica
 
 ### Obrigatórias (Conforme Especificação)
+
 - **TypeScript**: Tipagem completa da aplicação
 - **React**: Componentes funcionais + 1 componente de classe (UserDetail)
 - **Styled Components**: Estilização com tema customizado
@@ -22,16 +23,19 @@ Uma Single Page Application desenvolvida em React + TypeScript que consome a API
 - **React Router**: Navegação entre páginas
 
 ### Complementares
+
 - **Vite**: Build tool e servidor de desenvolvimento
 - **Redux Toolkit**: Simplificação do Redux com melhor tipagem
 
 ## 🚀 Setup e Instalação
 
 ### Pré-requisitos
+
 - Node.js (versão 16 ou superior)
 - npm ou yarn
 
 ### Instalação
+
 ```bash
 # Clone ou baixe o projeto
 cd users-spa
@@ -96,23 +100,26 @@ src/
 
 ## 🏗️ Decisões Arquiteturais
 
-### Por que Redux + Saga?
+### Atribuições
+
 - **Redux**: Gerenciamento de estado previsível e centralizado
 - **Saga**: Controle fino sobre efeitos colaterais e fluxos assíncronos
 - **Separação de responsabilidades**: Componentes focam em apresentação, sagas lidam com lógica assíncrona
-- **Testabilidade**: Sagas são facilmente testáveis com generators
 
 ### Estrutura de Pastas
+
 - **Modular**: Cada feature tem sua própria pasta (users, favorites)
 - **Separação de concerns**: API, store, components, pages claramente divididos
 - **Colocação**: Arquivos relacionados ficam próximos (slice + saga + selectors)
 
 ### Styled Components + Tema
+
 - **CSS-in-JS**: Estilos encapsulados e dinâmicos
 - **Tema centralizado**: Cores, espaçamentos e outros tokens reutilizáveis
 - **TypeScript**: Tipagem completa do tema para autocomplete
 
 ### Componente de Classe
+
 - **UserDetail**: Implementado como classe conforme especificação
 - **Lifecycle methods**: Demonstra uso de componentDidMount e componentDidUpdate
 - **Connect pattern**: Usa react-redux connect para demonstrar padrão clássico
@@ -128,6 +135,7 @@ src/
 ## 🎨 Extensibilidade
 
 ### Adicionando Nova Feature (ex: Posts)
+
 ```bash
 # 1. Criar estrutura
 mkdir src/store/posts
@@ -142,6 +150,7 @@ touch src/store/posts/posts.selectors.ts
 ```
 
 ### Adicionando Persistência
+
 ```typescript
 // Instalar: npm install redux-persist
 // Configurar persistência no store/index.ts
@@ -150,6 +159,7 @@ import storage from 'redux-persist/lib/storage';
 ```
 
 ### Testes
+
 ```bash
 # Instalar dependências de teste
 npm install --save-dev @testing-library/react @testing-library/jest-dom vitest
@@ -183,17 +193,3 @@ npm run preview    # Preview do build
 npm run lint       # Linting (se configurado)
 npm run type-check # Verificação de tipos
 ```
-
-## ⚡ Próximos Passos
-
-- [ ] **Testes unitários**: Jest + Testing Library
-- [ ] **Dark mode**: Toggle de tema escuro/claro
-- [ ] **Paginação**: Para grandes volumes de dados
-- [ ] **PWA**: Service Worker + manifest
-- [ ] **Internacionalização**: i18n para múltiplos idiomas
-- [ ] **Persistência**: LocalStorage ou IndexedDB
-- [ ] **Cache inteligente**: React Query ou SWR
-
----
-
-**Desenvolvido com ❤️ usando React + TypeScript + Redux Saga**

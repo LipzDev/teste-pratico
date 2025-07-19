@@ -85,7 +85,7 @@ export const SectionTitle = styled.h3`
 
 export const DetailItem = styled.div`
   margin-bottom: ${({ theme }) => theme.spacing.md};
-  
+
   &:last-child {
     margin-bottom: 0;
   }
