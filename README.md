@@ -101,8 +101,7 @@ src/
 ├── hooks/               # Custom hooks
 │   ├── useHomePage.ts       # Lógica da página inicial
 │   ├── useUserDetail.ts     # Lógica dos detalhes do usuário
-│   ├── useUserDetailPage.ts # Lógica da página de detalhes
-│   ├── useFavorites.ts      # Lógica dos favoritos
+│   ├── useUserDetailPage.ts # Lógica da página de detalhes│
 │   └── useFavoritesPanel.ts # Lógica do painel de favoritos
 ├── styles/              # Tema e estilos globais
 │   ├── theme.ts             # Definições do tema
