@@ -1,4 +1,4 @@
-# Lista de Usuários - SPA
+# Lista de Usuários - Teste prático.
 
 Uma Single Page Application desenvolvida em React + TypeScript que consome a API pública JSONPlaceholder para listar usuários, permitir busca, exibir detalhes e gerenciar favoritos usando Redux + Redux Saga.
 
@@ -144,3 +144,103 @@ src/
 - **Breakpoints**: sm(576px), md(768px), lg(992px), xl(1200px)
 - **Grid flexível**: Lista de usuários se adapta ao espaço disponível
 - **Touch-friendly**: Botões e áreas clicáveis dimensionadas adequadamente
+
+### Componente de Classe - UserDetailPage
+
+### 📋 **Descrição Técnica**
+
+O `UserDetailPage` é o **único componente de classe** da aplicação, implementado como demonstração de compatibilidade entre padrões modernos e legados do React.
+
+### **Implementação Detalhada**
+
+```typescript
+class UserDetailPageClass extends Component<UserDetailPageProps, UserDetailPageState> {
+  constructor(props: UserDetailPageProps) {
+    super(props);
+    this.state = {
+      userId: null
+    };
+  }
+
+  componentDidMount() {
+    this.validateAndSetUserId();
+  }
+
+  componentDidUpdate(prevProps: UserDetailPageProps) {
+    if (prevProps.params.id !== this.props.params.id) {
+      this.validateAndSetUserId();
+    }
+  }
+
+  validateAndSetUserId = () => {
+    const { id } = this.props.params;
+    const userId = id ? parseInt(id, 10) : 0;
+
+    if (!id || isNaN(userId)) {
+      this.props.navigate('/');
+      return;
+    }
+
+    this.setState({ userId });
+  };
+
+  render() {
+    const { userId } = this.state;
+    if (!userId) return null;
+
+    return (
+      <Layout title="Detalhes do Usuário">
+        <UserDetail />
+      </Layout>
+    );
+  }
+}
+```
+
+### **Características Técnicas**
+
+#### **1. Lifecycle Methods**
+
+- **`constructor`**: Inicialização do estado com `userId: null`
+- **`componentDidMount`**: Validação inicial do parâmetro da URL
+- **`componentDidUpdate`**: Re-validação quando o ID da URL muda
+- **`render`**: Renderização condicional baseada no estado
+
+#### **2. Gerenciamento de Estado**
+
+```typescript
+interface UserDetailPageState {
+  userId: number | null;
+}
+```
+
+- **Estado local** para armazenar o ID do usuário validado
+- **Validação** do parâmetro da URL antes de renderizar
+- **Navegação automática** para home se ID inválido
+
+#### **3. Integração com React Router**
+
+```typescript
+// HOC para compatibilidade com React Router v6
+const withRouter = (Component: any) => {
+  return (props: any) => {
+    const params = useParams();
+    const navigate = useNavigate();
+    return <Component {...props} params={params} navigate={navigate} />;
+  };
+};
+```
+
+- **HOC customizado** para injetar props do React Router
+- **Compatibilidade** com React Router v6 em componente de classe
+- **Injeção** de `params` e `navigate` como props
+
+### **Uso na Aplicação**
+
+```typescript
+// Rota configurada no App.tsx
+<Route path="/users/:id" element={<UserDetailPage />} />
+
+// Acesso via URL
+http://localhost:5173/users/4
+```

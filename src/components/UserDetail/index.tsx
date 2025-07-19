@@ -1,7 +1,7 @@
 import { useUserDetail } from "@/hooks/useUserDetail";
 import type { IUser } from "@/types/user";
-import * as S from "./styles";
 import { Loader } from "../Shared/Loader";
+import * as S from "./styles";
 
 const renderContactInfo = (user: IUser) => (
   <S.DetailSection>
@@ -62,7 +62,7 @@ const renderCompanyInfo = (user: IUser) => (
       <S.DetailLabel>Slogan:</S.DetailLabel>
       <S.DetailValue>{user.company.catchPhrase}</S.DetailValue>
     </S.DetailItem>
-    
+
     <S.DetailItem>
       <S.DetailLabel>Área de Negócio:</S.DetailLabel>
       <S.DetailValue>{user.company.bs}</S.DetailValue>
