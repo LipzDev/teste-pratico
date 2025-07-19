@@ -12,7 +12,6 @@ export const store = configureStore({
       thunk: false,
       serializableCheck: false,
     }).concat(sagaMiddleware),
-  devTools: import.meta.env.DEV,
 });
 
 sagaMiddleware.run(rootSaga);
