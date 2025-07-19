@@ -2,7 +2,7 @@
 
 Uma Single Page Application desenvolvida em React + TypeScript que consome a API pública JSONPlaceholder para listar usuários, permitir busca, exibir detalhes e gerenciar favoritos usando Redux + Redux Saga.
 
-## 🎯 Funcionalidades
+### Funcionalidades
 
 - ✅ **Listagem de Usuários**: Exibe todos os usuários com name, email e phone
 - ✅ **Busca/Filtro**: Filtro por nome (case-insensitive) em memória
@@ -12,12 +12,10 @@ Uma Single Page Application desenvolvida em React + TypeScript que consome a API
 - ✅ **Error Handling**: Estados de erro com opção de retry
 - ✅ **Responsive Design**: Interface adaptativa para diferentes dispositivos
 
-## 🧱 Stack Tecnológica
-
-### Obrigatórias (Conforme Especificação)
+### Stack
 
 - **TypeScript**: Tipagem completa da aplicação
-- **React**: Componentes funcionais + 1 componente de classe (UserDetail)
+- **React**: Componentes funcionais
 - **Styled Components**: Estilização com tema customizado
 - **Redux + Redux Saga**: Gerenciamento de estado e fluxos assíncronos
 - **React Router**: Navegação entre páginas
@@ -27,14 +25,10 @@ Uma Single Page Application desenvolvida em React + TypeScript que consome a API
 - **Vite**: Build tool e servidor de desenvolvimento
 - **Redux Toolkit**: Simplificação do Redux com melhor tipagem
 
-## 🚀 Setup e Instalação
-
-### Pré-requisitos
+## Setup e Instalação
 
 - Node.js (versão 16 ou superior)
 - npm ou yarn
-
-### Instalação
 
 ```bash
 # Clone ou baixe o projeto
@@ -78,7 +72,7 @@ src/
 │   │   ├── UserListItem.tsx  # Item da lista (funcional)
 │   │   └── styles.ts         # Estilos específicos
 │   ├── UserDetail/      # Detalhes do usuário
-│   │   ├── UserDetail.class.tsx # Componente de CLASSE (obrigatório)
+│   │   ├── UserDetail.tsx # Componente funcional
 │   │   └── styles.ts            # Estilos do detalhe
 │   ├── Favorites/       # Painel de favoritos
 │   │   ├── FavoritesPanel.tsx # Gerenciamento de favoritos
@@ -98,8 +92,6 @@ src/
     └── styled.d.ts           # Extensão de tipos do styled-components
 ```
 
-## 🏗️ Decisões Arquiteturais
-
 ### Atribuições
 
 - **Redux**: Gerenciamento de estado previsível e centralizado
@@ -118,78 +110,9 @@ src/
 - **Tema centralizado**: Cores, espaçamentos e outros tokens reutilizáveis
 - **TypeScript**: Tipagem completa do tema para autocomplete
 
-### Componente de Classe
-
-- **UserDetail**: Implementado como classe conforme especificação
-- **Lifecycle methods**: Demonstra uso de componentDidMount e componentDidUpdate
-- **Connect pattern**: Usa react-redux connect para demonstrar padrão clássico
-
-## 🔄 Fluxo de Dados
-
-1. **Inicialização**: App carrega → dispatch `fetchUsersRequest()`
-2. **Saga**: Intercepta action → chama API → dispatch success/failure
-3. **Reducer**: Atualiza estado com dados ou erro
-4. **Componentes**: Reagem às mudanças via selectors
-5. **Favoritos**: Gerenciados localmente no Redux (sem persistência)
-
-## 🎨 Extensibilidade
-
-### Adicionando Nova Feature (ex: Posts)
-
-```bash
-# 1. Criar estrutura
-mkdir src/store/posts
-touch src/store/posts/posts.slice.ts
-touch src/store/posts/posts.sagas.ts
-touch src/store/posts/posts.selectors.ts
-
-# 2. Implementar slice + saga (similar aos users)
-# 3. Adicionar ao rootReducer e rootSaga
-# 4. Criar componentes + página
-# 5. Adicionar rota no App.tsx
-```
-
-### Adicionando Persistência
-
-```typescript
-// Instalar: npm install redux-persist
-// Configurar persistência no store/index.ts
-import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-```
-
-### Testes
-
-```bash
-# Instalar dependências de teste
-npm install --save-dev @testing-library/react @testing-library/jest-dom vitest
-
-# Estrutura sugerida:
-# src/__tests__/store/  (reducers, selectors, sagas)
-# src/__tests__/components/  (componentes)
-# src/__tests__/integration/  (fluxos completos)
-```
-
-## 📱 Responsividade
+### Responsividade
 
 - **Mobile-first**: Design adaptativo para telas pequenas
 - **Breakpoints**: sm(576px), md(768px), lg(992px), xl(1200px)
 - **Grid flexível**: Lista de usuários se adapta ao espaço disponível
 - **Touch-friendly**: Botões e áreas clicáveis dimensionadas adequadamente
-
-## 🚀 Performance
-
-- **Code splitting**: React.lazy() para carregamento sob demanda
-- **Memoização**: Selectors otimizados para evitar re-renders
-- **Bundle optimization**: Vite tree-shaking automático
-- **API caching**: Busca única, filtragem em memória
-
-## 🔧 Comandos Disponíveis
-
-```bash
-npm run dev        # Servidor de desenvolvimento
-npm run build      # Build de produção
-npm run preview    # Preview do build
-npm run lint       # Linting (se configurado)
-npm run type-check # Verificação de tipos
-```
