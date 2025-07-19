@@ -12,7 +12,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
   value,
   onChange,
   placeholder = "Digite o nome do usuário...",
-  label = "🔍 Buscar usuário por nome",
+  label = "Buscar usuário por nome",
 }) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
@@ -26,7 +26,6 @@ export const SearchInput: React.FC<SearchInputProps> = ({
     <S.SearchContainer>
       <S.SearchLabel htmlFor="search-input">{label}</S.SearchLabel>
       <S.SearchWrapper>
-        <S.SearchIcon>🔍</S.SearchIcon>
         <S.SearchInputField
           id="search-input"
           type="text"
@@ -40,7 +39,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
           onClick={handleClear}
           title="Limpar busca"
         >
-          ✕
+          x
         </S.ClearButton>
       </S.SearchWrapper>
     </S.SearchContainer>

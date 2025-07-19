@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const FavoritesContainer = styled.div`
   background: ${({ theme }) => theme.colors.white};
@@ -81,7 +81,7 @@ export const FavoriteItem = styled.div`
   overflow: hidden;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -198,7 +198,7 @@ export const FavoriteActions = styled.div`
   margin-top: auto;
 `;
 
-export const FavoriteButton = styled.button<{ variant?: 'primary' | 'danger' }>`
+export const FavoriteButton = styled.button<{ variant?: "primary" | "danger" }>`
   flex: 1;
   padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
   border-radius: ${({ theme }) => theme.borderRadius.md};
@@ -209,11 +209,12 @@ export const FavoriteButton = styled.button<{ variant?: 'primary' | 'danger' }>`
   min-height: 32px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: ${({ theme }) => theme.spacing.xs};
+  justify-content: space-between;
+  text-wrap: nowrap;
+  white-space: nowrap;
 
-  ${({ theme, variant = 'primary' }) =>
-    variant === 'danger'
+  ${({ theme, variant = "primary" }) =>
+    variant === "danger"
       ? `
         background: ${theme.colors.backgroundAlt};
         color: ${theme.colors.danger};
@@ -269,7 +270,7 @@ export const EmptyFavoritesSubtext = styled.p`
 export const CollapseButton = styled.button<{ $isCollapsed: boolean }>`
   background: ${({ theme }) => theme.colors.backgroundAlt};
   border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: ${({ theme }) => theme.borderRadius.lg};
+  border-radius: ${({ theme }) => theme.borderRadius.sm};
   padding: ${({ theme }) => theme.spacing.sm};
   color: ${({ theme }) => theme.colors.textLight};
   transition: ${({ theme }) => theme.transitions.fast};
@@ -278,6 +279,7 @@ export const CollapseButton = styled.button<{ $isCollapsed: boolean }>`
   justify-content: center;
   width: 32px;
   height: 32px;
+  margin-left: 15px;
 
   &:hover {
     background: ${({ theme }) => theme.colors.border};
@@ -287,7 +289,7 @@ export const CollapseButton = styled.button<{ $isCollapsed: boolean }>`
 
   svg {
     transform: rotate(
-      ${({ $isCollapsed }) => ($isCollapsed ? '180deg' : '0deg')}
+      ${({ $isCollapsed }) => ($isCollapsed ? "180deg" : "0deg")}
     );
     transition: ${({ theme }) => theme.transitions.fast};
   }

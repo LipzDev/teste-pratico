@@ -1,11 +1,12 @@
 import { useUserDetail } from "@/hooks/useUserDetail";
 import type { IUser } from "@/types/user";
+import { Heart } from "lucide-react";
 import { Loader } from "../Shared/Loader";
 import * as S from "./styles";
 
 const renderContactInfo = (user: IUser) => (
   <S.DetailSection>
-    <S.SectionTitle>📞 Informações de Contato</S.SectionTitle>
+    <S.SectionTitle>Informações de Contato</S.SectionTitle>
     <S.DetailItem>
       <S.DetailLabel>Email:</S.DetailLabel>
       <S.DetailValue>{user.email}</S.DetailValue>
@@ -23,7 +24,7 @@ const renderContactInfo = (user: IUser) => (
 
 const renderAddressInfo = (user: IUser) => (
   <S.DetailSection>
-    <S.SectionTitle>🏠 Endereço</S.SectionTitle>
+    <S.SectionTitle>Endereço</S.SectionTitle>
     <S.DetailItem>
       <S.DetailLabel>Rua:</S.DetailLabel>
       <S.DetailValue>
@@ -52,7 +53,7 @@ const renderAddressInfo = (user: IUser) => (
 
 const renderCompanyInfo = (user: IUser) => (
   <S.DetailSection>
-    <S.SectionTitle>🏢 Empresa</S.SectionTitle>
+    <S.SectionTitle>Empresa</S.SectionTitle>
     <S.DetailItem>
       <S.DetailLabel>Nome:</S.DetailLabel>
       <S.DetailValue>{user.company.name}</S.DetailValue>
@@ -96,9 +97,12 @@ export const UserDetail = () => {
             isFavorite={isFavorite}
             onClick={handleToggleFavorite}
           >
-            {isFavorite
-              ? "❤️ Remover dos Favoritos"
-              : "🤍 Adicionar aos Favoritos"}
+            <Heart
+              size={16}
+              style={{ marginRight: "8px" }}
+              fill={isFavorite ? "currentColor" : "none"}
+            />
+            {isFavorite ? "Remover favorito" : "Favoritar"}
           </S.FavoriteButton>
         </S.UserDetailHeader>
 

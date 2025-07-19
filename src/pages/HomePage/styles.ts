@@ -17,6 +17,11 @@ export const RetryButton = styled.button`
   font-weight: 500;
   margin-top: ${({ theme }) => theme.spacing.md};
   transition: background-color 0.2s ease;
+  text-wrap: nowrap;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.light};

@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { Mail, Phone, Building, MapPin, Eye, Heart } from "lucide-react";
 import type { IUser } from "@/types/user";
 import { selectIsFavorite } from "@/store/favorites/favorites.selectors";
 import { addFavorite, removeFavorite } from "@/store/favorites/favorites.slice";
@@ -65,23 +66,31 @@ export const UserListItem: React.FC<UserListItemProps> = ({
 
       <S.UserDetails>
         <S.UserDetail>
-          <S.DetailIcon>📧</S.DetailIcon>
+          <S.DetailIcon>
+            <Mail size={16} />
+          </S.DetailIcon>
           <S.DetailText title={user.email}>{user.email}</S.DetailText>
         </S.UserDetail>
         <S.UserDetail>
-          <S.DetailIcon>📞</S.DetailIcon>
+          <S.DetailIcon>
+            <Phone size={16} />
+          </S.DetailIcon>
           <S.DetailText title={user.phone}>
             {formatPhone(user.phone)}
           </S.DetailText>
         </S.UserDetail>
         <S.UserDetail>
-          <S.DetailIcon>🏢</S.DetailIcon>
+          <S.DetailIcon>
+            <Building size={16} />
+          </S.DetailIcon>
           <S.DetailText title={user.company.name}>
             {user.company.name}
           </S.DetailText>
         </S.UserDetail>
         <S.UserDetail>
-          <S.DetailIcon>📍</S.DetailIcon>
+          <S.DetailIcon>
+            <MapPin size={16} />
+          </S.DetailIcon>
           <S.DetailText title={`${user.address.city}, ${user.address.zipcode}`}>
             {user.address.city}
           </S.DetailText>
@@ -90,7 +99,8 @@ export const UserListItem: React.FC<UserListItemProps> = ({
 
       <S.ActionsContainer>
         <S.ActionButton onClick={handleViewDetails}>
-          👁️ Ver Detalhes
+          <Eye size={16} style={{ marginRight: "4px" }} />
+          Ver Detalhes
         </S.ActionButton>
         <S.ActionButton
           variant={isFavorite ? "danger" : "secondary"}
@@ -100,7 +110,7 @@ export const UserListItem: React.FC<UserListItemProps> = ({
           }
         >
           <S.FavoriteIcon $isFavorite={isFavorite}>
-            {isFavorite ? "❤️" : "🤍"}
+            <Heart size={16} fill={isFavorite ? "currentColor" : "none"} />
           </S.FavoriteIcon>
         </S.ActionButton>
       </S.ActionsContainer>

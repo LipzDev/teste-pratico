@@ -32,7 +32,7 @@ export const Title = styled.h1`
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.typography.fontSize["4xl"]};
   font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
-  margin-bottom: ${({ theme }) => theme.spacing.md};
+  margin-bottom: ${({ theme }) => theme.spacing.xs};
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   letter-spacing: -0.025em;
 `;
@@ -42,6 +42,7 @@ export const Subtitle = styled.p`
   font-size: ${({ theme }) => theme.typography.fontSize.lg};
   font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
   opacity: 0.9;
+  padding: 20px 0px;
   max-width: 600px;
   margin: 0 auto;
 `;

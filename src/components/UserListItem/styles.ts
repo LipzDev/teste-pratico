@@ -13,9 +13,10 @@ export const ActionButton = styled.button<{
   border: 1px solid transparent;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: ${({ theme }) => theme.spacing.xs};
+  justify-content: space-between;
   min-height: 44px;
+  text-wrap: nowrap;
+  white-space: nowrap;
 
   ${({ theme, variant = "primary" }) => {
     switch (variant) {

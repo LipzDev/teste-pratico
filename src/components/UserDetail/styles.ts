@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const UserDetailContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
@@ -40,8 +40,13 @@ export const FavoriteButton = styled.button<{ isFavorite: boolean }>`
   font-size: 1rem;
   font-weight: 500;
   transition: all 0.2s ease;
-  width: 100%;
-  max-width: 200px;
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-wrap: nowrap;
+  white-space: nowrap;
 
   ${({ theme, isFavorite }) =>
     isFavorite
@@ -78,9 +83,6 @@ export const SectionTitle = styled.h3`
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: ${({ theme }) => theme.spacing.md};
-  display: flex;
-  align-items: center;
-  gap: ${({ theme }) => theme.spacing.sm};
 `;
 
 export const DetailItem = styled.div`
@@ -112,6 +114,11 @@ export const BackButton = styled.button`
   font-weight: 500;
   margin-bottom: ${({ theme }) => theme.spacing.lg};
   transition: background-color 0.2s ease;
+  text-wrap: nowrap;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.dark};

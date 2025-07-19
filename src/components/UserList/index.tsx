@@ -1,6 +1,7 @@
+import { Search, Users } from "lucide-react";
 import type { IUser } from "@/types/user";
-import * as S from "./styles";
 import { UserListItem } from "../UserListItem";
+import * as S from "./styles";
 
 interface UserListProps {
   users: IUser[];
@@ -51,7 +52,9 @@ export const UserList: React.FC<UserListProps> = ({
   if (users.length === 0) {
     return (
       <S.EmptyState className="animate-fade-in">
-        <S.EmptyStateIcon>{isFiltered ? "🔍" : "👥"}</S.EmptyStateIcon>
+        <S.EmptyStateIcon>
+          {isFiltered ? <Search size={48} /> : <Users size={48} />}
+        </S.EmptyStateIcon>
         <S.EmptyStateText>
           {isFiltered
             ? "Nenhum usuário encontrado"

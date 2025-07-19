@@ -1,3 +1,4 @@
+import { AlertCircle, RefreshCw } from "lucide-react";
 import { useHomePage } from "@/hooks/useHomePage";
 import { Loader } from "@/components/Shared/Loader";
 import { SearchInput } from "@/components/Shared/SearchInput";
@@ -29,10 +30,12 @@ export const HomePage: React.FC = () => {
     return (
       <Layout>
         <S.ErrorMessage>
-          ❌ Erro ao carregar usuários: {error}
+          <AlertCircle size={20} style={{ marginRight: "8px" }} />
+          Erro ao carregar usuários: {error}
           <br />
           <S.RetryButton onClick={handleRetry}>
-            🔄 Tentar novamente
+            <RefreshCw size={16} style={{ marginRight: "4px" }} />
+            Tentar novamente
           </S.RetryButton>
         </S.ErrorMessage>
       </Layout>
@@ -47,7 +50,7 @@ export const HomePage: React.FC = () => {
         value={searchTerm}
         onChange={setSearchTerm}
         placeholder="Digite o nome do usuário..."
-        label="🔍 Buscar usuário por nome:"
+        label="Buscar usuário por nome:"
       />
 
       <UserList

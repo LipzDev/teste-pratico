@@ -65,24 +65,19 @@ export const SearchLabel = styled.label`
 
 export const ClearButton = styled.button<{ $visible: boolean }>`
   position: absolute;
-  right: ${({ theme }) => theme.spacing.md};
   top: 50%;
+  right: ${({ theme }) => theme.spacing.md};
   transform: translateY(-50%);
-  background: ${({ theme }) => theme.colors.textLight};
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.textLight};
   border-radius: ${({ theme }) => theme.borderRadius.full};
-  width: 24px;
-  height: 24px;
+
+  width: 15px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: ${({ theme }) => theme.typography.fontSize.sm};
+
+  font-size: ${({ theme }) => theme.typography.fontSize.base};
   opacity: ${({ $visible }) => ($visible ? 1 : 0)};
   visibility: ${({ $visible }) => ($visible ? "visible" : "hidden")};
-  transition: ${({ theme }) => theme.transitions.fast};
-
-  &:hover {
-    background: ${({ theme }) => theme.colors.danger};
-    transform: translateY(-50%) scale(1.1);
-  }
 `;

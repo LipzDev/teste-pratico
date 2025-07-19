@@ -1,3 +1,14 @@
+import {
+  Star,
+  Sparkles,
+  Phone,
+  Building,
+  MapPin,
+  Eye,
+  Trash2,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react";
 import { useFavoritesPanel } from "@/hooks/useFavoritesPanel";
 import * as S from "@/components/Favorites/styles";
 
@@ -17,13 +28,16 @@ export const FavoritesPanel = () => {
         <S.FavoritesHeader>
           <S.FavoritesTitleWrapper>
             <S.FavoritesTitle>
-              ⭐ Favoritos
+              <Star size={20} style={{ marginRight: "8px" }} />
+              Favoritos
               <S.FavoritesCount>0</S.FavoritesCount>
             </S.FavoritesTitle>
           </S.FavoritesTitleWrapper>
         </S.FavoritesHeader>
         <S.EmptyFavorites>
-          <S.EmptyFavoritesIcon>💫</S.EmptyFavoritesIcon>
+          <S.EmptyFavoritesIcon>
+            <Sparkles size={48} />
+          </S.EmptyFavoritesIcon>
           <S.EmptyFavoritesText>
             Nenhum usuário favoritado ainda
           </S.EmptyFavoritesText>
@@ -41,7 +55,8 @@ export const FavoritesPanel = () => {
       <S.FavoritesHeader>
         <S.FavoritesTitleWrapper>
           <S.FavoritesTitle>
-            ⭐ Favoritos
+            <Star size={20} style={{ marginRight: "8px" }} />
+            Favoritos
             <S.FavoritesCount>{favoriteUsers.length}</S.FavoritesCount>
           </S.FavoritesTitle>
         </S.FavoritesTitleWrapper>
@@ -50,7 +65,7 @@ export const FavoritesPanel = () => {
           onClick={() => setIsCollapsed(!isCollapsed)}
           title={isCollapsed ? "Expandir favoritos" : "Recolher favoritos"}
         >
-          {isCollapsed ? "↓" : "↑"}
+          {isCollapsed ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
         </S.CollapseButton>
       </S.FavoritesHeader>
 
@@ -76,19 +91,21 @@ export const FavoritesPanel = () => {
 
               <S.FavoriteCardContent>
                 <S.FavoriteInfoRow>
-                  <S.FavoriteInfoIcon>📞</S.FavoriteInfoIcon>
+                  <S.FavoriteInfoIcon>
+                    <Phone size={16} />
+                  </S.FavoriteInfoIcon>
                   <S.FavoriteInfoText>{user.phone}</S.FavoriteInfoText>
                 </S.FavoriteInfoRow>
                 <S.FavoriteInfoRow>
-                  <S.FavoriteInfoIcon>🌐</S.FavoriteInfoIcon>
-                  <S.FavoriteInfoText>{user.website}</S.FavoriteInfoText>
-                </S.FavoriteInfoRow>
-                <S.FavoriteInfoRow>
-                  <S.FavoriteInfoIcon>🏢</S.FavoriteInfoIcon>
+                  <S.FavoriteInfoIcon>
+                    <Building size={16} />
+                  </S.FavoriteInfoIcon>
                   <S.FavoriteInfoText>{user.company.name}</S.FavoriteInfoText>
                 </S.FavoriteInfoRow>
                 <S.FavoriteInfoRow>
-                  <S.FavoriteInfoIcon>📍</S.FavoriteInfoIcon>
+                  <S.FavoriteInfoIcon>
+                    <MapPin size={16} />
+                  </S.FavoriteInfoIcon>
                   <S.FavoriteInfoText>
                     {user.address.city}, {user.address.zipcode}
                   </S.FavoriteInfoText>
@@ -97,14 +114,16 @@ export const FavoritesPanel = () => {
 
               <S.FavoriteActions>
                 <S.FavoriteButton onClick={() => handleViewDetails(user.id)}>
-                  👁️ Detalhes
+                  <Eye size={16} style={{ marginRight: "4px" }} />
+                  Detalhes
                 </S.FavoriteButton>
                 <S.FavoriteButton
                   variant="danger"
                   onClick={() => handleRemoveFavorite(user.id)}
                   title="Remover dos favoritos"
                 >
-                  🗑️ Remover
+                  <Trash2 size={16} style={{ marginRight: "4px" }} />
+                  Remover
                 </S.FavoriteButton>
               </S.FavoriteActions>
             </S.FavoriteItem>
