@@ -16,7 +16,7 @@ Antes de executar o projeto, configure as variáveis de ambiente:
 # Copie o conteudo do arquivo de exemplo
 cp .env.example
 
-# Crie manualmente o arquivo .env na raiz do projeto, caso o sistema não encontre a variável de ambiente relacionada, será utilizada o endpoint
+# Crie manualmente o arquivo .env na raiz do projeto com o seguinte nome VITE_API_BASE_URL
 ```
 
 ### 2. Variáveis Disponíveis
