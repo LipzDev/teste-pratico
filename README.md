@@ -14,7 +14,7 @@ Antes de executar o projeto, configure as variáveis de ambiente:
 
 ```bash
 # Copie o conteudo do arquivo de exemplo
-cp .env.example
+ .env.example
 
 # Crie manualmente o arquivo .env na raiz do projeto, dentro dele crie a variável de ambiente com o seguinte nome VITE_API_BASE_URL
 ```
@@ -61,7 +61,12 @@ VITE_API_BASE_URL=https://jsonplaceholder.typicode.com
 ## Setup e Instalação
 
 - Node.js (versão 16 ou superior)
-- npm ou yarn
+- npm
+
+  ## Atenção 
+
+**caso deseje utilizar o *yarn* para a instalação inicial, você precisará garantir que sua versão do Node seja ^20.19.0 || >=22.12.0 
+isto ocorre pois o Vite 7.0.5 requer Node.js versão ^20.19.0 || >=22.12.0.**
 
 ```bash
 # Instale as dependências
