@@ -62,8 +62,8 @@ VITE_API_BASE_URL=https://jsonplaceholder.typicode.com
 
 - Node.js (versão 16 ou superior)
 - npm
-- **caso deseje utilizar o *yarn* para a instalação inicial, você precisará garantir que sua versão do Node seja ^20.19.0 || >=22.12.0 
-isto ocorre pois o Vite 7.0.5 requer Node.js versão ^20.19.0 || >=22.12.0.**
+- Caso deseje utilizar o *yarn* para a instalação inicial, você precisará garantir que sua versão do Node seja ^20.19.0 || >=22.12.0 
+isto ocorre pois o Vite 7.0.5 requer Node.js versão ^20.19.0 || >=22.12.0.
 
 ```bash
 # Instale as dependências
