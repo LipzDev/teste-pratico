@@ -12,10 +12,7 @@ interface UserListItemProps {
   index?: number;
 }
 
-export const UserListItem: React.FC<UserListItemProps> = ({
-  user,
-  index = 0,
-}) => {
+export const UserListItem = ({ user, index = 0 }: UserListItemProps) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isFavorite = useSelector((state: RootState) =>

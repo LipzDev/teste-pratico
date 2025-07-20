@@ -12,7 +12,6 @@ interface UserDetailPageState {
   userId: number | null;
 }
 
-// HOC para injetar props do React Router
 const withRouter = (WrappedComponent: typeof Component) => {
   return (props: Record<string, unknown>) => {
     const params = useParams();

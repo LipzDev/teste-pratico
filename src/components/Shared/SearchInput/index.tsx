@@ -8,12 +8,12 @@ interface SearchInputProps {
   label?: string;
 }
 
-export const SearchInput: React.FC<SearchInputProps> = ({
+export const SearchInput = ({
   value,
   onChange,
   placeholder = "Digite o nome do usuário...",
   label = "Buscar usuário por nome",
-}) => {
+}: SearchInputProps) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
   };

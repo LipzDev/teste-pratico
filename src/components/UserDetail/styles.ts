@@ -6,6 +6,10 @@ export const UserDetailContainer = styled.div`
   box-shadow: ${({ theme }) => theme.shadows.md};
   padding: ${({ theme }) => theme.spacing.xl};
   margin-bottom: ${({ theme }) => theme.spacing.lg};
+
+  @media screen and (max-width: 768px) {
+    padding: ${({ theme }) => theme.spacing.sm};
+  }
 `;
 
 export const UserDetailHeader = styled.div`

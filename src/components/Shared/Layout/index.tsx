@@ -7,11 +7,11 @@ interface LayoutProps {
   subtitle?: string;
 }
 
-export const Layout: React.FC<LayoutProps> = ({
+export const Layout = ({
   children,
   title = "Lista de Usuários",
   subtitle = "Gerencie e explore informações de usuários de forma elegante e intuitiva",
-}) => {
+}: LayoutProps) => {
   return (
     <S.LayoutContainer>
       <S.HeaderBackground>

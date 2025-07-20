@@ -9,11 +9,11 @@ interface UserListProps {
   isLoading?: boolean;
 }
 
-export const UserList: React.FC<UserListProps> = ({
+export const UserList = ({
   users,
   isFiltered = false,
   isLoading = false,
-}) => {
+}: UserListProps) => {
   if (isLoading) {
     return (
       <S.LoadingGrid>

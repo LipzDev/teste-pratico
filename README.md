@@ -1,6 +1,39 @@
 # Lista de Usuários - Teste prático.
 
-Uma Single Page Application desenvolvida em React + TypeScript que consome a API pública JSONPlaceholder para listar usuários, permitir busca, exibir detalhes e gerenciar favoritos usando Redux + Redux Saga.
+Uma Single Page Application desenvolvida em React + TypeScript que consome a API pública JSONPlaceholder para listar usuários, permitir busca, exibir detalhes e gerenciar favoritos.
+
+### Acesse o sistema:
+
+A aplicação está hospedada em: `https://teste-pratico-henna.vercel.app/`
+
+### Configuração de Variáveis de Ambiente
+
+### 1. Configuração Inicial
+
+Antes de executar o projeto, configure as variáveis de ambiente:
+
+```bash
+# Copie o conteudo do arquivo de exemplo
+cp .env.example
+
+# Crie manualmente o arquivo .env na raiz do projeto, caso o sistema não encontre a variável de ambiente relacionada, será utilizada o endpoint
+```
+
+### 2. Variáveis Disponíveis
+
+O arquivo `.env` deve conter:
+
+```env
+# API Configuration
+VITE_API_BASE_URL=https://jsonplaceholder.typicode.com
+```
+
+### 3. Importante
+
+- **Nunca commite** o arquivo `.env` no repositório
+- Use sempre o `env.example` como referência
+- Todas as variáveis devem começar com `VITE_` para serem acessíveis no frontend
+- A aplicação tem fallback para a URL padrão caso a variável não esteja definida
 
 ### Funcionalidades
 
@@ -49,7 +82,7 @@ npm run preview
 
 A aplicação estará disponível em: `http://localhost:5173/`
 
-## 📁 Arquitetura do Projeto
+### Arquitetura do Projeto
 
 ```
 src/
@@ -146,7 +179,7 @@ src/
 
 ### Componente de Classe - UserDetailPage
 
-### 📋 **Descrição Técnica**
+### **Descrição Técnica**
 
 O `UserDetailPage` é o **único componente de classe** da aplicação, implementado como demonstração de compatibilidade entre padrões modernos e legados do React.
 
@@ -220,7 +253,6 @@ interface UserDetailPageState {
 #### **3. Integração com React Router**
 
 ```typescript
-// HOC para compatibilidade com React Router v6
 const withRouter = (Component: any) => {
   return (props: any) => {
     const params = useParams();
@@ -241,5 +273,5 @@ const withRouter = (Component: any) => {
 <Route path="/users/:id" element={<UserDetailPage />} />
 
 // Acesso via URL
-http://localhost:5173/users/4
+`http://localhost:5173/users/4`
 ```

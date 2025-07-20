@@ -7,7 +7,7 @@ import { Layout } from "@/components/Shared/Layout";
 import * as S from "./styles";
 import { UserList } from "@/components/UserList";
 
-export const HomePage: React.FC = () => {
+export const HomePage = () => {
   const {
     users,
     loading,

@@ -4,7 +4,7 @@ interface LoaderProps {
   text?: string;
 }
 
-export const Loader: React.FC<LoaderProps> = ({ text = "Carregando..." }) => {
+export const Loader = ({ text = "Carregando..." }: LoaderProps) => {
   return (
     <S.LoaderContainer>
       <S.Spinner />

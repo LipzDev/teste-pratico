@@ -36,6 +36,8 @@ export const useUserDetail = () => {
   };
 
   const handleToggleFavorite = () => {
+    if (!user) return;
+
     if (isFavorite) {
       dispatch(removeFavorite(userId));
     } else {
