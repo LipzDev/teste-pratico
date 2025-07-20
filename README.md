@@ -64,9 +64,6 @@ VITE_API_BASE_URL=https://jsonplaceholder.typicode.com
 - npm ou yarn
 
 ```bash
-# Clone ou baixe o projeto
-cd users-spa
-
 # Instale as dependências
 npm install
 
